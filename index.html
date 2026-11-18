@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -14,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root{
   --bg:#04141c;
@@ -38,19 +40,16 @@ body{
   position:relative;
 }
 
-/* ---------- Aurora blobs ---------- */
 .blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.45;z-index:0;pointer-events:none;animation:float 18s ease-in-out infinite}
 .b1{width:340px;height:340px;background:#1aa6b7;top:-80px;right:-80px}
 .b2{width:300px;height:300px;background:#e8c57a;bottom:10%;left:-120px;opacity:.22;animation-delay:-6s}
 .b3{width:260px;height:260px;background:#5b6cff;top:45%;right:-100px;opacity:.2;animation-delay:-11s}
 @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-40px) scale(1.12)}}
 
-/* ---------- Stars / particles ---------- */
 #sparks{position:fixed;inset:0;z-index:0;pointer-events:none}
 
 .wrap{position:relative;z-index:2;max-width:520px;margin:0 auto;padding:22px 18px 140px}
 
-/* ---------- Language ---------- */
 .lang{display:flex;justify-content:flex-end;gap:6px;margin-bottom:10px}
 .lang button{
   background:var(--glass);border:1px solid var(--glass-b);color:var(--muted);
@@ -59,7 +58,6 @@ body{
 }
 .lang button.on{color:#1b1204;background:linear-gradient(135deg,var(--gold2),var(--gold));border-color:transparent}
 
-/* ---------- Hero ---------- */
 .hero{text-align:center;padding:18px 0 8px;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
 .logo-ring{
   width:132px;height:132px;margin:0 auto 22px;border-radius:50%;
@@ -88,22 +86,11 @@ h1{
 @keyframes shine{to{background-position:200% center}}
 .sub{color:var(--muted);font-size:15px;line-height:1.55;max-width:380px;margin:0 auto}
 
-.stars{display:flex;justify-content:center;gap:8px;margin:22px 0 4px}
-.stars span{
-  font-size:30px;color:var(--gold);filter:drop-shadow(0 0 10px rgba(232,197,122,.65));
-  animation:twinkle 2.4s ease-in-out infinite;display:inline-block
-}
-.stars span:nth-child(2){animation-delay:.2s}.stars span:nth-child(3){animation-delay:.4s}
-.stars span:nth-child(4){animation-delay:.6s}.stars span:nth-child(5){animation-delay:.8s}
-@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.22) rotate(10deg)}}
-
-/* ---------- Section title ---------- */
 .step{
   display:flex;align-items:center;gap:12px;margin:34px 0 16px;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700
 }
 .step::before,.step::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent)}
 
-/* ---------- Map cards ---------- */
 .cards{display:grid;gap:14px}
 .card{
   --c:#fff;
@@ -146,7 +133,6 @@ h1{
 }
 .hint b{color:var(--gold2)}
 
-/* ---------- Contacts ---------- */
 .contacts{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .chip{
   display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 8px;border-radius:20px;text-decoration:none;color:var(--text);
@@ -158,7 +144,6 @@ h1{
 .thanks{text-align:center;margin-top:38px;font:italic 500 24px/1.35 'Cormorant Garamond',serif;color:var(--gold2)}
 .thanks small{display:block;font:500 12px 'Manrope';letter-spacing:.2em;color:var(--muted);margin-top:10px;text-transform:uppercase}
 
-/* ---------- Waves ---------- */
 .waves{position:fixed;left:0;right:0;bottom:0;height:120px;z-index:1;pointer-events:none}
 .waves svg{position:absolute;bottom:0;width:200%;height:100%}
 .w1{animation:wave 14s linear infinite;opacity:.35}
@@ -166,7 +151,6 @@ h1{
 .w3{animation:wave 6s linear infinite;opacity:.8}
 @keyframes wave{to{transform:translateX(-50%)}}
 
-/* ---------- Sticky call ---------- */
 .call{
   position:fixed;z-index:5;left:50%;transform:translateX(-50%);bottom:max(18px,env(safe-area-inset-bottom));
   display:flex;align-items:center;gap:10px;text-decoration:none;color:#1b1204;font-weight:800;font-size:14px;
@@ -182,9 +166,12 @@ h1{
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
+
 <body>
 
-<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="blob b1"></div>
+<div class="blob b2"></div>
+<div class="blob b3"></div>
 <canvas id="sparks"></canvas>
 
 <main class="wrap">
@@ -202,10 +189,10 @@ h1{
         <span class="fallback">L</span>
       </div>
     </div>
+
     <div class="eyebrow" data-t="eyebrow">Добро пожаловать</div>
     <h1>Lakeside Hotel</h1>
     <p class="sub" data-t="sub">Расскажите о вашем отдыхе. Ваш отзыв помогает нам становиться лучше, а другим гостям — выбирать нас.</p>
-    <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
   </section>
 
   <div class="step" data-t="step1">Выберите карту</div>
@@ -247,17 +234,22 @@ h1{
       <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
       <span data-t="c_call">Ресепшен</span>
     </a>
+
     <a class="chip" href="https://t.me/lakesidehotel" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><path d="M21.5 3 2.5 10.6l6.1 2.3 2.3 6.9 3.4-4.2 5 3.7L21.5 3ZM8.6 12.9l9.6-6.4"/></svg>
       <span>Telegram</span>
     </a>
+
     <a class="chip" href="https://lakesidehotel.uz/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
       <span data-t="c_site">Сайт</span>
     </a>
   </section>
 
-  <p class="thanks"><span data-t="thanks">Спасибо, что выбрали нас</span><small>Lakeside Hotel</small></p>
+  <p class="thanks">
+    <span data-t="thanks">Спасибо, что выбрали нас</span>
+    <small>Lakeside Hotel</small>
+  </p>
 
 </main>
 
@@ -273,46 +265,123 @@ h1{
 </a>
 
 <script>
-/* ---------- Translations ---------- */
 const T={
-  ru:{eyebrow:"Добро пожаловать",sub:"Расскажите о вашем отдыхе. Ваш отзыв помогает нам становиться лучше, а другим гостям — выбирать нас.",step1:"Выберите карту",small:"Оставить отзыв",hint:"Откроется страница отеля на карте — нажмите <b>«Оставить отзыв»</b> и поставьте оценку.",step2:"Связаться с нами",c_call:"Ресепшен",c_site:"Сайт",thanks:"Спасибо, что выбрали нас",call:"Позвонить на ресепшен"},
-  uz:{eyebrow:"Xush kelibsiz",sub:"Dam olishingiz haqida aytib bering. Sizning fikringiz bizni yaxshilaydi, boshqa mehmonlarga esa tanlashga yordam beradi.",step1:"Xaritani tanlang",small:"Fikr qoldirish",hint:"Mehmonxona sahifasi xaritada ochiladi — <b>«Sharh qoldirish»</b> tugmasini bosing va baho bering.",step2:"Biz bilan bog‘lanish",c_call:"Qabul",c_site:"Sayt",thanks:"Bizni tanlaganingiz uchun rahmat",call:"Qabulga qo‘ng‘iroq qilish"},
-  en:{eyebrow:"Welcome",sub:"Tell us about your stay. Your review helps us improve and helps other guests choose us.",step1:"Choose a map",small:"Leave a review",hint:"The hotel page will open on the map — tap <b>“Write a review”</b> and rate your stay.",step2:"Get in touch",c_call:"Reception",c_site:"Website",thanks:"Thank you for choosing us",call:"Call reception"}
+  ru:{
+    eyebrow:"Добро пожаловать",
+    sub:"Расскажите о вашем отдыхе. Ваш отзыв помогает нам становиться лучше, а другим гостям — выбирать нас.",
+    step1:"Выберите карту",
+    small:"Оставить отзыв",
+    hint:"Откроется страница отеля на карте — нажмите <b>«Оставить отзыв»</b> и поставьте оценку.",
+    step2:"Связаться с нами",
+    c_call:"Ресепшен",
+    c_site:"Сайт",
+    thanks:"Спасибо, что выбрали нас",
+    call:"Позвонить на ресепшен"
+  },
+  uz:{
+    eyebrow:"Xush kelibsiz",
+    sub:"Dam olishingiz haqida aytib bering. Sizning fikringiz bizni yaxshilaydi, boshqa mehmonlarga esa tanlashga yordam beradi.",
+    step1:"Xaritani tanlang",
+    small:"Fikr qoldirish",
+    hint:"Mehmonxona sahifasi xaritada ochiladi — <b>«Sharh qoldirish»</b> tugmasini bosing va baho bering.",
+    step2:"Biz bilan bog‘lanish",
+    c_call:"Qabul",
+    c_site:"Sayt",
+    thanks:"Bizni tanlaganingiz uchun rahmat",
+    call:"Qabulga qo‘ng‘iroq qilish"
+  },
+  en:{
+    eyebrow:"Welcome",
+    sub:"Tell us about your stay. Your review helps us improve and helps other guests choose us.",
+    step1:"Choose a map",
+    small:"Leave a review",
+    hint:"The hotel page will open on the map — tap <b>“Write a review”</b> and rate your stay.",
+    step2:"Get in touch",
+    c_call:"Reception",
+    c_site:"Website",
+    thanks:"Thank you for choosing us",
+    call:"Call reception"
+  }
 };
+
 function setLang(l){
   const d=T[l]||T.ru;
   document.documentElement.lang=l;
-  document.querySelectorAll('[data-t]').forEach(el=>{el.innerHTML=d[el.dataset.t]});
-  document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    el.innerHTML=d[el.dataset.t];
+  });
+  document.querySelectorAll('#lang button').forEach(b=>{
+    b.classList.toggle('on',b.dataset.l===l);
+  });
   try{localStorage.setItem('lh_lang',l)}catch(e){}
 }
-document.getElementById('lang').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setLang(b.dataset.l)});
+
+document.getElementById('lang').addEventListener('click',e=>{
+  const b=e.target.closest('button');
+  if(b)setLang(b.dataset.l);
+});
+
 let init='ru';
 try{init=localStorage.getItem('lh_lang')}catch(e){}
-if(!init){const n=(navigator.language||'ru').slice(0,2);init=T[n]?n:'ru'}
+if(!init){
+  const n=(navigator.language||'ru').slice(0,2);
+  init=T[n]?n:'ru';
+}
 setLang(init);
 
-/* ---------- Golden sparks ---------- */
+/* Golden sparks */
 (function(){
   const c=document.getElementById('sparks'),x=c.getContext('2d');
   let W,H,P=[];
-  function size(){W=c.width=innerWidth;H=c.height=innerHeight}
-  size();addEventListener('resize',size);
+
+  function size(){
+    W=c.width=innerWidth;
+    H=c.height=innerHeight;
+  }
+
+  size();
+  addEventListener('resize',size);
+
   const N=Math.min(60,Math.floor(innerWidth/14));
-  for(let i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.8+.4,v:Math.random()*.35+.08,a:Math.random()*Math.PI*2,s:Math.random()*.02+.005});
+
+  for(let i=0;i<N;i++){
+    P.push({
+      x:Math.random()*W,
+      y:Math.random()*H,
+      r:Math.random()*1.8+.4,
+      v:Math.random()*.35+.08,
+      a:Math.random()*Math.PI*2,
+      s:Math.random()*.02+.005
+    });
+  }
+
   function tick(){
     x.clearRect(0,0,W,H);
+
     for(const p of P){
-      p.y-=p.v;p.a+=p.s;p.x+=Math.sin(p.a)*.3;
-      if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
-      x.beginPath();x.arc(p.x,p.y,p.r,0,7);
+      p.y-=p.v;
+      p.a+=p.s;
+      p.x+=Math.sin(p.a)*.3;
+
+      if(p.y<-5){
+        p.y=H+5;
+        p.x=Math.random()*W;
+      }
+
+      x.beginPath();
+      x.arc(p.x,p.y,p.r,0,7);
       x.fillStyle='rgba(247,227,176,'+(.25+Math.abs(Math.sin(p.a))*.55)+')';
-      x.shadowBlur=10;x.shadowColor='#e8c57a';x.fill();
+      x.shadowBlur=10;
+      x.shadowColor='#e8c57a';
+      x.fill();
     }
+
     requestAnimationFrame(tick);
   }
+
   tick();
 })();
 </script>
+
 </body>
 </html>
